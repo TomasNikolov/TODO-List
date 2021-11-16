@@ -1,4 +1,4 @@
-package main.java.entities;
+package entities;
 
 import java.sql.SQLException;
 import java.util.List;

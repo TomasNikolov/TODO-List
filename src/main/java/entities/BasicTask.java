@@ -1,4 +1,4 @@
-package main.java.entities;
+package entities;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
