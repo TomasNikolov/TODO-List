@@ -1,4 +1,4 @@
-package main.java.clientserver;
+package clientserver;
 
 import java.io.BufferedReader;
 import java.io.IOException;

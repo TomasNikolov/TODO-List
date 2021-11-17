@@ -3,6 +3,7 @@ package entities;
 import javax.xml.bind.DatatypeConverter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
 public class User {
     private int id;
     private String username;
@@ -26,7 +27,7 @@ public class User {
     }
 
 
-    public static class UserBuilder{
+    public static class UserBuilder {
         private int id;
         private String username;
         private String password;
@@ -37,12 +38,12 @@ public class User {
             this.password = password;
         }
 
-        public UserBuilder withId(int id){
+        public UserBuilder withId(int id) {
             this.id = id;
             return this;
         }
 
-        public UserBuilder withEmail(String email){
+        public UserBuilder withEmail(String email) {
             this.email = email;
             return this;
         }
@@ -56,10 +57,10 @@ public class User {
             return user;
         }
 
-        private String mask (String string) {
+        private String mask(String string) {
             try {
                 MessageDigest md = MessageDigest.getInstance("MD5");
-                byte [] digest = md.digest(string.getBytes());
+                byte[] digest = md.digest(string.getBytes());
                 return DatatypeConverter.printHexBinary(digest);
             } catch (NoSuchAlgorithmException e) {
                 return string;
@@ -68,5 +69,6 @@ public class User {
         }
     }
 
-    private User() {}
+    private User() {
+    }
 }

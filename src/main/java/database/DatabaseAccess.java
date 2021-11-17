@@ -18,7 +18,7 @@ public abstract class DatabaseAccess {
     }
 
     protected void closeConnection() throws SQLException {
-        if(connection != null) {
+        if (connection != null) {
             if (!connection.isClosed()) {
                 connection.close();
                 System.out.println("[+] Disconnected from database");

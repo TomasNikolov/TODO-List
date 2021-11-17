@@ -16,15 +16,16 @@ public class UserDAO extends DatabaseAccess implements DAO<User> {
     private String username;
     private String password;
 
-    public UserDAO() {}
+    public UserDAO() {
+    }
 
-    public void initialize(String username, String password){
+    public void initialize(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
     public User getUser() throws SQLException {
-        if (user == null){
+        if (user == null) {
             user = this.get().get(0);
         }
         return user;
@@ -55,10 +56,10 @@ public class UserDAO extends DatabaseAccess implements DAO<User> {
             }
             this.closeConnection();
         }
-        if (users.isEmpty()){
+        if (users.isEmpty()) {
             throw new SQLDataException("[-] No user found");
         }
-        if (users.size() > 1){
+        if (users.size() > 1) {
             throw new SQLDataException("[-] Multiple users found");
         }
         return users;
@@ -82,8 +83,7 @@ public class UserDAO extends DatabaseAccess implements DAO<User> {
             System.out.println("[+] User Inserted" + "\n"); // Echo For debugging
 
             this.closeConnection();
-        }
-        else{
+        } else {
             throw new SQLDataException("[-] Username already taken");
         }
     }
